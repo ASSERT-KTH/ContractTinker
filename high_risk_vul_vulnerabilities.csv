@@ -1,0 +1,146 @@
+File Path
+Unchecked ERC20 transfers can cause lock up
+Can access cards of other markets
+anyone can call function `sponsor`
+Anyone can affect deposits of any user and turn the owner of the token
+Duplication of Balance
+auth collision possible
+YieldMath.sol / Log2: >= or > ?
+Unhandled return value of transfer in `transferOut()` of Pools.sol
+Flash attack mitigation does not work as intended in USDV.sol
+Missing DAO functionality to call `changeDAO()` function in Vader.sol
+Proposals can be cancelled
+Flash loans can affect governance voting in DAO.sol
+Incorrect burn address in Vader.sol
+Wrong `calcAsymmetricShare` calculation
+Wrong liquidity units calculation
+Incorrect initialization gives IL protection of only 1 second instead of 100 days in Router.sol
+Anyone can list anchors / curate tokens
+Swap token can be traded as fake base token
+`getAddedAmount` can return wrong results
+4 Synths can be minted with fake base token
+Missing access restriction on `lockUnits/unlockUnits`
+Wrong slippage protection on Token -> Token trades
+Tokens can be stolen through `transferTo`
+Transfer fee is burned on wrong accounts
+Vault rewards can be gamed
+Vault rewards last claim time not always initialized
+Vault Weight accounting is wrong for withdrawals
+Anyone Can Avoid All Vether Transfer Fees By Adding Their Address to the Vether `ExcludedAddresses` List.
+Users may unintentionally remove liquidity under a phishing attack.
+Anyone can curate pools and steal rewards
+Incorrect initialization causes VADER emission rate of 1 second instead of 1 day in Vader.sol
+UniswapConfig getters return wrong token config if token config does not exist
+uint(-1) index for not found
+Reward computation is wrong
+`LendingPair.liquidateAccount` does not accrue and update `cumulativeInterestRate`
+`LendingPair.liquidateAccount` fails if tokens are lent out
+Missing overflow check in `flashLoan`
+`distribute` DoS on missing `receiveRewards` implementation
+`getRandomTokenIdFromFund` yields wrong probabilities for ERC1155
+`NFTXLPStaking` Is Subject To A Flash Loan Attack That Can Steal Nearly All Rewards/Fees That Have Accrued For A Particular Vault
+`SynthVault` withdraw forfeits rewards
+`Pool.sol` & `Synth.sol`: Failing Max Value Allowance
+Result of `transfer` / `transferFrom` not checked
+Members lose SPARTA tokens in `removeLiquiditySingle()`
+Synth `realise` is vulnerable to flash loan attacks
+`SynthVault` rewards can be gamed
+Missing slippage checks
+Dividend reward can be gamed
+arbitrary synth mint/burn from pool
+Hijack token pool by burning liquidity token
+Misuse of AMM model on minting `Synth` (resubmit to add more detail)
+wrong `calcLiquidityHoldings` that leads to dead fund in the Pool
+Flash loan manipulation on `getPoolShareWeight` of `Utils`
+Anyone can arbitrarily add router liquidity
+`activeTransactionBlocks` are vulnerable to DDoS attacks
+Router liquidity on receiving chain can be double-dipped by the user
+Expired transfers will lock user funds on the sending chain
+`Approval` is not reset if the call to `IFulfillHelper` fails
+Flash swap call back prior to transferring tokens in `indexPool`
+Index Pool always swap to Zero
+`IndexPool` pow overflows when `weightRatio` > 10.
+IndexPool's `INIT_POOL_SUPPLY` is not fair.
+hybrid pool uses wrong `non_optimal_mint_fee`
+`IndexPool`:  Poor conversion from Balancer V1's corresponding functions
+"`IndexPool.mint` The first liquidity provider is forced to supply assets in the same amount, which may cause a significant amount of fund loss"
+"`HybridPool`'s reserve is converted to ""amount"" twice"
+Unsafe cast in `IndexPool` mint leads to attack
+`IndexPool` initial LP supply computation is wrong
+`ConstantProductPool.burnSingle` swap amount computations should use balance
+absolute difference is not calculated properly when a > b in MathUtils
+Overflow in the `mint` function of `IndexPool` causes LPs' funds to be stolen
+Incorrect usage of `_pow` in `_computeSingleOutGivenPoolIn` of `IndexPool`
+Incorrect multiplication in `_computeSingleOutGivenPoolIn` of `IndexPool`
+Funds in the pool could be stolen by exploiting `flashSwap` in `HybridPool`
+implicit underflows
+`Buoy3Pool.safetyCheck` is not precise and has some assumptions
+Incorrect use of operator leads to arbitrary minting of GVT tokens
+`sortVaultsByDelta` doesn't work as expected
+ERC-721 Enumerable Spec mismatch for index of `tokenByIndex()` function
+Signature malleability of EVM's `ecrecover` in `verify()`
+Arbitrary Transfer of Unowned NFTs
+`Beebots.TradeValid()` Will Erroneously Return True When Maker Is Set To `Address(0)` and `makerIds` Are Set To The `TokenIds` of Unminted Beebot NFTs
+function `tokenByIndex` treats last index as invalid
+NFT can be minted for free after sale ended
+Self transfer can lead to unlimited mint
+DAO proposals can be executed by anyone due to vulnerable `TimelockController`
+`CompoundToNotionalV2.notionalCallback` ERC20 return values not checked
+Access restrictions on `CompoundToNotionalV2.notionalCallback` can be bypassed
+Access restrictions on `NotionalV1ToNotionalV2.notionalCallback` can be bypassed
+`TokenHandler.safeTransferOut` does not work on non-standard compliant tokens like USDT
+`TokenHandler.safeTransferIn` does not work on non-standard compliant tokens like USDT
+DOS by Frontrunning NoteERC20 `initialize()` Function
+Potential DOS in Contracts Inheriting `UUPSUpgradeable.sol`
+Liquidity token value can be manipulated
+Re-entrancy bug allows inflating balance
+Missing `fromToken != toToken` check
+Price feed can be manipulated
+Inconsistent usage of `applyInterest`
+Wrong liquidation logic
+Users are credited more tokens when paying back debt with `registerTradeAndBorrow`
+`account.holdsToken` is never set
+Rewards cannot be withdrawn
+lastUpdatedDay not initialized
+function buyBond charges msg.sender twice
+Impossible to call withdrawReward fails due to run out of gas
+`findNewOwner` edgecase
+`UberOwner` has too much power
+A previously timelocked NFT token becomes permanently stuck in vault if it’s ever moved back into the vault
+NFT transfer approvals are not removed and cannot be revoked thus leading to loss of NFT tokens
+Approval for NFT transfers is not removed after transfer
+Unbounded loop in `_removeNft` could lead to a griefing/DOS attack
+Wrong trading pricing calculations
+Use of incorrect index leads to incorrect updation of funding rates
+Malicious owner can drain the market at any time using `SafetyWithdraw`
+Logic error in fee subtraction
+Insurance slippage reimbursement can be used to steal insurance fund
+Wrong price scale for `GasOracle`
+`Controller.setCap` sets wrong vault balance
+set cap breaks vault's Balance
+No safety check in `addToken`
+Controller does not raise an error when there's insufficient liquidity
+Vault treats all tokens exactly the same that creates (huge) arbitrage opportunities.
+earn results in decreasing share price
+`Vault.balance()` mixes normalized and standard amounts
+`Vault.withdraw` mixes normalized and standard amounts
+`removeToken` would break the vault/protocol.
+An attacker can steal funds from multi-token vaults
+User could lose underlying tokens when redeeming from the `IdleYieldSource`
+`YearnV2YieldSource` wrong subtraction in withdraw
+`BadgerYieldSource` `balanceOfToken` share calculation seems wrong
+withdraw timelock can be circumvented
+`IdleYieldSource` doesn't use mantissa calculations
+Vault fails to track debt correctly that leads to bad debt
+"`FeePoolV0.sol#distributeMochi()` will unexpectedly flush `treasuryShare`, causing the protocol fee cannot be properly accounted for and collected"
+`ReferralFeePoolV0.sol#claimRewardAsMochi()` Array out of bound exception
+`registerAsset()` can `overwrite _assetClass` value
+`debts` calculation is not accurate
+Referrer can drain `ReferralFeePoolV0`
+Liquidation will never work with non-zero discounts
+Anyone can extend withdraw wait period by depositing zero collateral
+treasury is vulnerable to sandwich attack
+Changing NFT contract in the `MochiEngine` would break the protocol
+`treasuryShare` is Overwritten in `FeePoolV0._shareMochi()`
+feePool is vulnerable to sandwich attack.
+Tokens Can Be Stolen By Frontrunning `VestedRewardPool.vest()` and `VestedRewardPool.lock()`

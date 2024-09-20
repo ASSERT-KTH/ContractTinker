@@ -1,0 +1,164 @@
+File Path
+payout doesn't fix `isForeclosed` state
+Critical `uberOwner` address changes should be a two-step process
+Missing `balancedBooks` modifier could result in failed system insolvency detection
+`minRentalDayDivisor` can be different between markets and treasury
+"`RCFactory.createMarket()` does not enforce `_timestamps` and `_timestamps` being larger than `_timestamps`, even though proper functioning requires them to be so"
+Possible locked-ether (funds) Issue in `RCOrderbook.sol`
+`maxSumOfPrices` check is broken
+Flows can bypass market and global pause
+Deposit whitelist enforced on `msg.sender` instead of user
+Missing call to `removeOldBids` may affect foreclosure
+NFT Hub implementation deviates from ERC721 for transfer functions
+`RCNftHubL2.safeTransferFrom` not according to spec
+Wrong calculation on `_collectRentAction`
+Market-specific pause is not checked for sponsor
+Deposits don't work with fee-on transfer tokens
+Deposits can be denied by abusing `maxContractBalance`
+Function `foreclosureTimeUser` returns a shorter user's foreclosure time than expected
+Potential griefing with DoS by front-running vault creation with same `vaultID`
+Uniswap Oracle uses wrong prices
+Witch can't give back vault after 2x grab
+User can redeem more tokens by artificially increasing the chi accrual
+Uninitialized or Incorrectly set `auctionInterval` may lead to liquidation engine livelock
+Violation of implicit constraints in batched operations may break protocol assumptions
+Possible DoS attack when creating `Joins` in `Wand`
+Users can avoid paying borrowing interest after the fyToken matures
+auth only works well with external functions
+User may not get IL protection if certain functions are called directly in `Pools.sol`
+Undefined behavior for DAO and GRANT vote proposals in `DAO.sol`
+Lack of input validation in `replacePool()` allows curated pool limit bypass in `Router.sol`
+`flashProof` is not flash-proof
+Interest debt is capped after a year
+Canceled proposals can still be executed
+Completed proposals can be voted on and executed again
+Divide before multiply
+Incorrect operator used in `deploySynth()` of `Pools.sol`
+Allowing duplicated anchors could cause bias on anchor price.
+Transfer fee avoidance
+Init function can be called by everyone
+Pool functions can be called before initialization in _`init_()` of Pools.sol
+`changeDAO` should be a two-step process in Vader.sol
+Copy-paste bug leading to incorrect harvest rewards in Vault.sol
+`Vader.redeemToMember()` vulnerable to front running
+Reward rates can be changed through flash borrows
+Chainlink - Use `latestRoundData` instead of `latestAnswer` to run more validations
+`safeTransferFrom` in `TransferHelper` is not `safeTransferFrom`
+`_wethWithdrawTo` is vulnerable re-entrancy
+Total LP supply & total debt accrual is wrong
+Randomization of NFTs returned in redeem/swap operations can be brute-forced
+Use `safeTransfer`/`safeTransferFrom` consistently instead of `transfer`/`transferFrom`
+Fee Distribution Re-Entrancy
+Unbounded iteration in `NFTXEligiblityManager.distribute` over `_feeReceivers`
+Manager can grief with fees
+Tokens can get stuck in `NFTXMintRequestEligibility`
+A malicious receiver can cause another receiver to lose out on distributed fees by returning `false` for `tokensReceived` when `receiveRewards` is called on their receiver contract.
+The direct redeem fee can be circumvented
+`Dao.sol`: Insufficient validation for proposal creation
+Missleading `onlyDAO` modifiers
+Improper access control of `claimAllForMember` allows anyone to reduce the weight of a member
+_deposit resetting user rewards can be used to grief them and make them loose rewards via `depositForMember`
+Pools can be created without initial liquidity
+Pool: `approveAndCall` sets unnecessary approval
+Synth: `approveAndCall` sets unnecessary approval
+`SynthVault` deposit lockup bypass
+In the beginning its relatively easy to gain majority share
+`grantFunds` will revert after a DAO upgrade.
+Block usage of `addCuratedPool`
+`BondVault.sol`: Possibly unwithdrawable bondedLP funds in `claimForMember()` + `claimRate` never zeros after full withdrawals
+Vulnerable Pool initial rate.
+BondVault `BASE` incentive can be gamed
+`DEPLOYER` can drain DAOVault funds + manipulate proposal results
+Signatures use only tx ID instead of entire digest
+Malicious router can block cross-chain-transfers
+No bar fees for `IndexPools`?
+`ConstantProductPool` & `HybridPool`: Adding and removing unbalanced liquidity yields slightly more tokens than swap
+Router would fail when adding liquidity to index Pool
+Router's `complexPath` percentagePaths don't work as expected
+`_depositToBentoBox` sometimes uses both ETH and WETH
+`withdrawFromWETH` always reverts
+`HybridPool`'s `flashSwap` sends entire fee to `barFeeTo`
+Rounding errors will occur for tokens without decimals
+Approximations may finish with inaccurate values
+Users are susceptible to back-running when depositing ETH to `TridenRouter`
+Usage of deprecated ChainLink API in `Buoy3Pool`
+Safe addresses can only be added but not removed
+`BaseVaultAdaptor` assumes `sharePrice` is always in underlying decimals
+Flash loan risk mitigation is optional and not robust enough
+Use of deprecated Chainlink function `latestAnswer`
+Early user can break minting
+Legacy Function Usage
+`randomIndex` is not truly random - possibility of predictably minting a specific token Id
+"instead of `call()` , `transfer()` is used to withdraw the ether"
+"TokenHandler.sol, L174 - `.transfer` is bad practice"
+`.latestRoundData()` does not update the oracle - `ExchangeRate.sol`
+Allowance checks not correctly implemented
+`CompoundToNotionalV2.enableToken` ERC20 missing return value check
+`nTokenERC20Proxy` emits events even when not success
+`TokenHandler.setToken` ERC20 missing return value check
+Attackers can force liquidations by borrowing large amounts of an asset.
+No default `liquidationThresholdPercent`
+Missing checks if pairs equal tokens
+No entry checks in crossSwap[Exact]TokensFor[Exact]Tokens
+maintainer can be pushed out
+Several function have no entry check
+Users Can Drain Funds From MarginSwap By Making Undercollateralized Borrows If The Price Of A Token Has Moved More Than 10% Since The Last MarginSwap Borrow/Liquidation Involving Accounts Holding That Token.
+diffMaxMinRuntime gets default value of 0
+PriceAware uses prices from getAmountsOut
+Isolated margin contracts declare but do not set the value of liquidationThresholdPercent
+Add a timelock to functions that set key variables
+Uninitialized Variable `marketWhitelist` in `RCTreasury.sol`
+Parameter updates not propagated
+Deposits don't work with fee-on transfer tokens
+Unhandled return value of `transferFrom` in `timeLockERC20()` could lead to fund loss for recipients
+`transferERC721` doesn't clean `timelockERC721s`
+`timelockERC721Keys` could exceed the block size limit
+Use of deprecated Chainlink API
+No check `transferFrom()` return value
+Deflationary tokens are not supported
+Underflow problems occurring when a token has >18 decimals
+Add reentrancy protections on function `executeTrade`
+Single-step process for critical ownership transfer
+Malicious owner can arbitrarily change fee to any % value
+Missing events for critical parameter changing operations by owner
+Wrong funding index in settle when no base?
+`prb-math` not audited
+Claim liquidation escrow
+avoid paying insurance
+Trader orders can be front-run and users can be denied from trading
+`VaultHelper` deposits don't work with fee-on transfer tokens
+ERC20 return values not checked
+`Vault.withdraw` sometimes burns too many shares
+Adding asymmetric liquidity in `_addLiquidity` results in fewer LP tokens minted than what should be wanted
+Vault: Swaps at parity with swap fee = withdrawal fee
+# Controller is vulnerable to sandwich attack
+Vault: Withdrawals can be frontrun to cause users to burn tokens without receiving funds in return
+`Controller.inCaseStrategyGetStuck` does not update balance
+token -> vault mapping can be overwritten
+`YAxisVotePower.balanceOf` can be manipulated
+wrong YAXIS estimates
+Harvest can be frontrun
+`manager.allowedVaults` check missing for add/remove strategy
+Halting the protocol should be `onlyGovernance` and not` onlyStrategist`
+`safeApprove()` for Yearn Vault may revert preventing deposits causing DoS
+Return values of ERC20 `transfer` and `transferFrom` are unchecked
+`SafeMath` not completely used in yield source contracts
+The assumption that operator == to (user) may not hold leading to failed timelock deposits
+Actual yield source check on address will succeed for non-existent contract
+`YieldSourcePrizePool_canAwardExternal` does not work
+Using `transferFrom` on ERC721 tokens
+liquidation factor < collateral factor for Sigma type
+`regerralFeePool` is vulnerable to MEV searcher
+A malicious user can potentially escape liquidation by creating a dust amount position and trigger the liquidation by themself
+Unchecked ERC20 transfer calls
+Chainlink's `latestRoundData` might return stale or incorrect results
+Debt accrual is path-dependant and inaccurate
+Changing engine.nft contract breaks vaults
+`UniswapV2/SushiwapLPAdapter` update the wrong token
+`UniswapV2TokenAdapter` does not support Sushiswap-only assets
+griefing attack to block withdraws
+borrow function will borrow max cf when trying to borrow > cf
+anyone can create a vault by directly calling the factory
+Improper Validation Of `create2` Return Value
+`MochiTreasuryV0.withdrawLock()` Is Callable When Locking Has Been Toggled
+`MochiTreasuryV0.sol` Is Unusable In Its Current State
