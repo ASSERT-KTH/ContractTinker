@@ -1,9 +1,10 @@
 from typing import Any
 from openai import OpenAI
 from transformers import T5ForConditionalGeneration, T5Tokenizer, AutoTokenizer, AutoModelForCausalLM
+import os
 
 class LLM:
-    # api_keys = {"openai":''}
+    api_keys = os.getenv('OPENAI_API_KEY')
     model_name = "gpt-3.5-turbo"
     
     def __init__(self, model_name, api_key = '') -> None:

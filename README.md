@@ -35,3 +35,31 @@ After preparing all inputs, the user can use the \textit{CompilationChecker} mod
 python patch_generate.py --report_path "{your report path}" --project_path "{your project path}" --vul_name "{vulnerability name}" --solc_remaps "{rely external libiaries}" --output "{your designated path}"
 ```
 with the aforementioned arguments to generate patches for the specified vulnerability. Finally, the patch will be stored in the designated path. 
+
+
+## Additional installation and usage example
+
+Install throught pip:
+```bash
+pip install -r requirements.txt
+```
+
+By default the tool in the repo is configured to use OPENAI's `gpt-3.5-turbo`.
+
+Usage example with dataset 3:
+```
+export OPENAI_API_KEY=<your key>
+
+cd open_source_dataset/3/contracts_3
+npm install
+solc-select use 0.8.20 --always-install
+
+cd ../../../ContractTinker
+python patch_generate.py \
+--report_path "../open_source_dataset/3/3.md" \
+--project_path "../open_source_dataset/3/" \
+--vul_name "Missing \`fromToken != toToken\` check" \
+--solc_remaps "@openzeppelin=../open_source_dataset/3/contracts_3/node_modules/@openzeppelin @uniswap=../open_source_dataset/3/contracts_3/node_modules/@uniswap hardhat=../open_source_dataset/3/contracts_3/node_modules/hardhat interfaces=../open_source_dataset/3/contracts_3/interfaces" \
+--output "./results.txt"
+
+```
